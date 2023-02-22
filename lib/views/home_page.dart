@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project_getx/widget/app_text.dart';
 import 'package:project_getx/widget/appcolor.dart';
-import 'package:project_getx/widget/apptext.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -12,11 +12,10 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            text(
+            TextWidget(
               text: 'My Home page',
               size: 32.0,
-              color: AppColor.prColor,
-              bold: FontWeight.bold,
+              color: AppColor.prColor, fontWeight: FontWeight.bold, textalign: TextAlign.center,
             ),
           ],
         ),

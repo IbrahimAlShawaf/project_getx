@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_getx/views/home_page.dart';
+import 'package:project_getx/views/onboarding.dart';
 import 'package:project_getx/widget/assetsimages.dart';
 
 class SplashPage extends StatefulWidget {
@@ -20,7 +21,7 @@ class _SplashPageState extends State<SplashPage> {
       // String routes = flag ? 'home' : 'Login';
       // Navigator.pushReplacementNamed(context, '/Home');
       Get.to(
-        const MyHomePage(),
+        const OnBoarding(),
         transition: Transition.fade,
         duration: const Duration(seconds: 1),
       );

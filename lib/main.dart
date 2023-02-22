@@ -14,15 +14,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-       
-        primarySwatch: Colors.blue,
-      ),
-       initialRoute: '/',
+      debugShowCheckedModeBanner: false,
+      title: 'Project In getx',
+      theme: ThemeData(),
+      initialRoute: '/',
       getPages: Routes.routes,
-
     );
   }
 }
-
