@@ -1,23 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
+import 'controller/signincontroller.dart';
 import 'widget/routes.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  await GetStorage.init();
+  Get.put(UserController());
+
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+  MyApp({super.key});
+  final box = GetStorage();
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Project In getx',
-      theme: ThemeData(),
+      //theme: ThemeData.dark(),
       initialRoute: '/',
+      // initialRoute: box.read('loggedIn') == true ? '/Home' : '/LoginPage',
       getPages: Routes.routes,
     );
   }

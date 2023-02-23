@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:project_getx/views/Auth/signin_page.dart';
 import 'package:project_getx/views/home_page.dart';
 
 import '../widget/appcolor.dart';
@@ -55,10 +56,10 @@ class _OnBoardingState extends State<OnBoarding> {
                       3,
                       (index) => Container(
                         margin: const EdgeInsets.symmetric(horizontal: 8),
-                        height: 15,
-                        width: 15,
+                        height: 12,
+                        width: 24,
                         decoration: BoxDecoration(
-                            shape: BoxShape.circle,
+                            shape: BoxShape.rectangle,
                             color: pageIndex == index
                                 ? AppColor.prColor
                                 : AppColor.textColor),
@@ -75,7 +76,7 @@ class _OnBoardingState extends State<OnBoarding> {
                       onPressed: pageIndex == 2
                           ? () {
                               Get.to(
-                                const MyHomePage(),
+                                 LoginPage(),
                                 transition: Transition.fade,
                                 duration: const Duration(seconds: 1),
                               );
@@ -106,7 +107,7 @@ class _OnBoardingState extends State<OnBoarding> {
                 ),
                 onPressed: () {
                   Get.to(
-                    const MyHomePage(),
+                     LoginPage(),
                     transition: Transition.fade,
                     duration: const Duration(seconds: 1),
                   );
