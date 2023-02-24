@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_getx/views/home_page.dart';
@@ -6,6 +7,7 @@ import 'package:project_getx/widget/app_text.dart';
 
 import '../widget/appcolor.dart';
 import '../controller/signincontroller.dart';
+import 'languages/mylanguage.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({
@@ -14,6 +16,7 @@ class MyDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    IconData moonIcon = CupertinoIcons.moon_stars;
     final userController = Get.find<UserController>();
     return Drawer(
       width: 280,
@@ -74,7 +77,7 @@ class MyDrawer extends StatelessWidget {
               size: 35,
             ),
             title: TextWidget(
-              text: 'Home',
+              text: '5'.tr,
               color: AppColor.prColor,
               size: 20,
               fontWeight: FontWeight.w600,
@@ -95,7 +98,7 @@ class MyDrawer extends StatelessWidget {
               size: 35,
             ),
             title: TextWidget(
-              text: 'Profile',
+              text: '6'.tr,
               color: AppColor.prColor,
               size: 20,
               fontWeight: FontWeight.w600,
@@ -110,12 +113,12 @@ class MyDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(
-              Icons.settings,
+              moonIcon,
               color: AppColor.textColor,
               size: 35,
             ),
             title: TextWidget(
-              text: 'Setting',
+              text: '7'.tr,
               color: AppColor.prColor,
               size: 20,
               fontWeight: FontWeight.w600,
@@ -136,12 +139,38 @@ class MyDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(
+              Icons.language_outlined,
+              color: AppColor.textColor,
+              size: 35,
+            ),
+            title: TextWidget(
+              text: '8'.tr,
+              color: AppColor.prColor,
+              size: 20,
+              fontWeight: FontWeight.w600,
+              textalign: TextAlign.center,
+            ),
+            onTap: () {
+              // Update the state of the app
+              Get.to(
+                () => MyLanguage(),
+                transition: Transition.fadeIn,
+                duration: const Duration(seconds: 1),
+              );
+
+              // ...
+              // Then close the drawer
+              //Navigator.of(context).pushNamed('setting');
+            },
+          ),
+          ListTile(
+            leading: Icon(
               Icons.logout_outlined,
               color: AppColor.textColor,
               size: 35,
             ),
             title: TextWidget(
-              text: 'Log Out',
+              text: '9'.tr,
               color: AppColor.prColor,
               size: 20,
               fontWeight: FontWeight.w600,

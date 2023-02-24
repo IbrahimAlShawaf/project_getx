@@ -19,7 +19,7 @@ class MyHomePage extends StatelessWidget {
         // elevation: 0.0,
         centerTitle: true,
         title: TextWidget(
-            text: 'Home Page',
+            text: '1'.tr,
             color: AppColor.textColor,
             size: 32,
             fontWeight: FontWeight.bold,
@@ -41,7 +41,7 @@ class MyHomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextWidget(
-              text: 'My Home page',
+              text: '10'.tr,
               size: 32.0,
               color: AppColor.prColor,
               fontWeight: FontWeight.bold,

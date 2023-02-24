@@ -18,7 +18,7 @@ class MySetting extends StatelessWidget {
         // elevation: 0.0,
         centerTitle: true,
         title: TextWidget(
-            text: 'Change Theme',
+            text: '11'.tr,
             color: AppColor.textColor,
             size: 32,
             fontWeight: FontWeight.bold,
@@ -33,30 +33,33 @@ class MySetting extends StatelessWidget {
           ),
         ),
       ),
-      body: Center(
-        child: Card(
-          child: ListTile(
-            title: TextWidget(
-                text: 'Change Theme',
-                color: AppColor.titleColor,
-                size: 24,
-                fontWeight: FontWeight.bold,
-                textalign: TextAlign.center),
-            subtitle: TextWidget(
-                text: 'Change Theme',
-                color: AppColor.subtitleColor,
-                size: 18,
-                fontWeight: FontWeight.bold,
-                textalign: TextAlign.center),
-            trailing: IconButton(
-              onPressed: () {
-                ThemeService().changeTheme();
-              },
-              icon: Icon(moonIcon),
-              iconSize: 35,
+      body: Column(
+        children: [
+          const SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextWidget(
+                    text: '11'.tr,
+                    color: AppColor.textColor,
+                    size: 24,
+                    fontWeight: FontWeight.bold,
+                    textalign: TextAlign.center),
+                IconButton(
+                  onPressed: () {
+                    ThemeService().changeTheme();
+                  },
+                  icon: Icon(moonIcon),
+                  iconSize: 35,
+                ),
+              ],
             ),
           ),
-        ),
+        ],
       ),
     );
   }

@@ -13,7 +13,8 @@ class ThemeService {
 
   final darkTheme = ThemeData.dark().copyWith(
     primaryColor: Colors.blue,
-    appBarTheme:  const AppBarTheme(),
+    //textTheme: TextTheme(labelLarge: TextStyle(color: Colors.white)),
+    appBarTheme: const AppBarTheme(),
     dividerColor: Colors.white54,
   );
 
@@ -37,7 +38,4 @@ class ThemeService {
 
     saveThemeData(!isSavedDarkMode());
   }
-
-
-
 }
