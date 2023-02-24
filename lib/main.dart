@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 import 'controller/signincontroller.dart';
+import 'views/theme/themeservice.dart';
 import 'widget/routes.dart';
 
 void main() async {
@@ -21,7 +22,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Project In getx',
-      //theme: ThemeData.dark(),
+      theme: ThemeService().lightTheme,
+      darkTheme: ThemeService().darkTheme,
+      themeMode: ThemeService().getThemeMode(),
       initialRoute: '/',
       // initialRoute: box.read('loggedIn') == true ? '/Home' : '/LoginPage',
       getPages: Routes.routes,

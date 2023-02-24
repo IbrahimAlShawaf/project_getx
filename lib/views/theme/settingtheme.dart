@@ -1,42 +1,61 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../controller/changtheme_controller.dart';
+import 'package:project_getx/views/home_page.dart';
+import 'package:project_getx/views/theme/themeservice.dart';
+import 'package:project_getx/widget/app_text.dart';
+import 'package:project_getx/widget/appcolor.dart';
 
 class MySetting extends StatelessWidget {
   MySetting({super.key});
-  //final ChangeTheme controller = Get.put(ChangeTheme());
+  IconData moonIcon = CupertinoIcons.moon_stars;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Change Theme'),
+        backgroundColor: AppColor.prColor,
+        // elevation: 0.0,
+        centerTitle: true,
+        title: TextWidget(
+            text: 'Change Theme',
+            color: AppColor.textColor,
+            size: 32,
+            fontWeight: FontWeight.bold,
+            textalign: TextAlign.center),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new),
+          iconSize: 20,
+          onPressed: () => Get.to(
+            () => MyHomePage(),
+            transition: Transition.fadeIn,
+            duration: const Duration(seconds: 1),
+          ),
+        ),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Text(
-            //   'Current Theme Mode:',
-            // ),
-            // Obx(() => Text(
-            //       '${controller.getThemeMode()}',
-            //       style: Theme.of(context).textTheme.headline4,
-            //     )),
-            SizedBox(height: 20),
-            ElevatedButton(
+        child: Card(
+          child: ListTile(
+            title: TextWidget(
+                text: 'Change Theme',
+                color: AppColor.titleColor,
+                size: 24,
+                fontWeight: FontWeight.bold,
+                textalign: TextAlign.center),
+            subtitle: TextWidget(
+                text: 'Change Theme',
+                color: AppColor.subtitleColor,
+                size: 18,
+                fontWeight: FontWeight.bold,
+                textalign: TextAlign.center),
+            trailing: IconButton(
               onPressed: () {
-                if (Get.isDarkMode) {
-                  Get.changeTheme(ThemeData.light());
-                } else {
-                  Get.changeTheme(ThemeData.dark());
-                }
+                ThemeService().changeTheme();
               },
-              //() => controller.toggleTheme(),
-              child: Text('Toggle Theme'),
+              icon: Icon(moonIcon),
+              iconSize: 35,
             ),
-          ],
+          ),
         ),
       ),
     );

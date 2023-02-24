@@ -22,7 +22,7 @@ class LoginPage extends StatelessWidget {
       body: SafeArea(
         child: Obx(() {
           if (userController.loggedIn.value) {
-            return const MyHomePage();
+            return  MyHomePage();
 
             // Center(
             //   child: Column(

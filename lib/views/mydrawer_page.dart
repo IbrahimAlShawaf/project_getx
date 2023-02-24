@@ -17,7 +17,7 @@ class MyDrawer extends StatelessWidget {
     final userController = Get.find<UserController>();
     return Drawer(
       width: 280,
-      backgroundColor: AppColor.bgColor,
+      //  backgroundColor: AppColor.bgColor,
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
@@ -85,7 +85,7 @@ class MyDrawer extends StatelessWidget {
               // ...
               // Then close the drawer
               // Navigator.of(context).pop();
-              Get.to(() => const MyHomePage());
+              Get.back();
             },
           ),
           ListTile(
@@ -123,7 +123,12 @@ class MyDrawer extends StatelessWidget {
             ),
             onTap: () {
               // Update the state of the app
-              Get.to(() => MySetting());
+              Get.to(
+                () => MySetting(),
+                transition: Transition.fadeIn,
+                duration: const Duration(seconds: 1),
+              );
+
               // ...
               // Then close the drawer
               //Navigator.of(context).pushNamed('setting');

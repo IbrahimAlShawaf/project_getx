@@ -9,7 +9,7 @@ import '../views/theme/settingtheme.dart';
 class Routes {
   static final routes = [
     GetPage(name: '/', page: () => const SplashPage()),
-    GetPage(name: '/Home', page: () => const MyHomePage()),
+    GetPage(name: '/Home', page: () =>  MyHomePage()),
     GetPage(name: '/OnBoarding', page: () => const OnBoarding()),
     GetPage(name: '/LoginPage', page: () => LoginPage()),
     GetPage(name: '/Setting', page: () => MySetting()),
