@@ -14,6 +14,8 @@ late SharedPreferences sharedpref;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   sharedpref = await SharedPreferences.getInstance();
+
+  // Add Any Initialize Methods in appServices
   await Get.putAsync(
     () => Appservices().appServices(),
   );
@@ -39,7 +41,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeService().getThemeMode(),
       initialRoute: '/',
       initialBinding: UserBinding(),
-      // initialRoute: box.read('loggedIn') == true ? '/Home' : '/LoginPage',
+      //initialRoute: box.read('loggedIn') == true ? '/Home' : '/LoginPage',
       getPages: Routes.routes,
     );
   }
