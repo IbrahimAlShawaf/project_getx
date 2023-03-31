@@ -10,10 +10,10 @@ import 'binding/userbinding.dart';
 import 'views/theme/themeservice.dart';
 import 'widget/routes.dart';
 
-late SharedPreferences sharedpref;
+//late SharedPreferences sharedpref;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  sharedpref = await SharedPreferences.getInstance();
+ // sharedpref = await SharedPreferences.getInstance();
 
   // Add Any Initialize Methods in appServices
   await Get.putAsync(
